@@ -4,9 +4,10 @@ pipeline {
      stages {
          
          stage("install apache pkg") {
-             sshagent (credentials: ['user'])
+             sshagent (credentials: ['user']) {
              steps{
                  sh 'sudo apt-get install apache2 -y'
+             }
              }
          }
          
